@@ -1,0 +1,15 @@
+Name: QIUFENG DU
+ID no.: 1439484
+Section: EA2
+
+Accessories:
+* Arduino Mega Board
+* USB cable
+* PC
+
+Wiring instructions:
+PC<-->USB cable <--> Arduino Mega Board
+
+
+Code running instruction:
+In this excerise, I wrote functions. These two functions will take a string of any length as an argument, print it to the serial port backwards and find the length of that string. In this excerise, I used function "char*" which is a character pointer. The first function counts the length of the string. Inside the first int function, I used while loop and if statement to check the string's characters. Untile the terminal "0" is found, the if statement turned out to be false and the while loop will be broken. At the end returning how many characters are checked. Then the second function is to use "for loop" to print the string from the last checked character to the first one. This function will print the string backwards. In the finally main function, I build a character array first, and use "char* " command to point the built charater array. Then used this character pointer as parameters of first two funtions. 

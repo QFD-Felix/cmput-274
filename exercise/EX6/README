@@ -1,0 +1,37 @@
+Name: QIUFENG DU
+ID no.: 1439484
+Section: EA2
+
+Accessories:
+* Arduino Mega Board
+* USB cable
+* PC
+
+Wiring instructions:
+PC<-->USB cable <--> Arduino Mega Board
+
+
+Code running instruction:
+Makefile:
+In Makefile, I used the one we create in the class. However, it will
+not work since the name of the file did not mach. So I changed the file
+name and deleted other useless file name. Right now, the make file
+would have objects and project name : new_example and these objects, 
+project are related to new_example.cpp file. At the end of the make 
+file, I used "@rm $(OBJECTS) $(PROJECT) -f" so the program could run 
+again after inputing "./f". 
+
+Cpp file:
+In this program, I read the input using cin>>, and calculated the 
+length of string. Then I used for loop to check whether the input is 
+pure digit. Since the atoi() function could only convert a character 
+arry into an integer, I converted the string into an character array. 
+By using the atoi() function I get the integer, then checked wether 
+the integer is zero or not. After the checking, print the output. When 
+the array is not pure positive integer, return false, else return 
+true. After this I ended the program. Then for the next part, I create 
+an new array first. The size of the array equal to the input string. 
+The pointer was also assigned for that array. Then I used for loop to 
+fill the array with integer from 1 to the integer of the input string. 
+After showing the output, I deleted the memories of the new arrays and 
+end the program. 

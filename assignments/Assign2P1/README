@@ -1,0 +1,36 @@
+Name: QIUFENG DU   
+ID no.: 1439484
+Section: EA2
+
+Name: WENCHEN ZHANG   
+ID no.: 1465149
+Section: EA2
+
+Accessories:
+* LCD Screen
+* Arduino Mega Board
+* Joystick
+* Wires
+
+Wiring instructions:
+Arduino Power 5V <--> Red Arduino Power Bus
+Arduino Power GND <--> Blue Arduino GND Bus
+LCD GND <--> Blue Arduino GND Bus
+LCD VCC to BB positive bus
+LCD RESET <--> Pin 8
+LCD D/C (Data/Command) <--> Pin 7
+LCD CARD_CS (Card Chip Select) <--> Pin 5
+LCD TFT_CS (TFT/screen Chip Select) <--> Pin 6
+LCD MOSI (Master Out Slave In) <--> Pin 51
+LCD SCK (Clock) <--> Pin 52
+LCD MISO (Master In Slave Out) <--> 50
+LCD LITE (Backlite) <--> Red Arduino Power Bus 
+Joystick VCC <--> Red Arduino Power Bus
+Joystick VERT <--> Pin A0
+Joystick HOR <--> Pin A1
+Joystick SEL <--> Pin 9
+Joystick GND <--> Blue Arduino GND Bus
+
+
+Code running instruction:
+In this excerise I wrote a program that uses both the joystick and your display. I used both cursor program and simpleimage program that we built during the class to help me to accomplish this excerise. In my code the first void function setputed the SD card and the arduino. This function also setted the black color as background and drew the small edmonton map above the background. In the scanJoystick function, I used if else statement to set the deadzon and boundaries of joystick. These would make joystick stop when joystick hits the map's boundaries. Also the joystick will not move when nobody is touching it. In updateScreen function, I drew a 3x3 square, and in order to cover the trail of the cursor, I redrew the picture where the cursor passes. In side the main function, I used build in function millis() to make the cursor move at a constant and controllable speed. 

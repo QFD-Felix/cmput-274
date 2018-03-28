@@ -1,0 +1,15 @@
+Name: QIUFENG DU
+ID no.: 1439484
+Section: EA2
+
+Accessories:
+* Arduino Mega Board
+* USB cable
+* PC
+
+Wiring instructions:
+PC<-->USB cable <--> Arduino Mega Board
+
+
+Code running instruction:
+In this code, we need to make the function only read the block once if the user continuous request the information from the same block. This will make the prgram runs faster. In side this fucntion, since one block has 8 restaurants' information, I used if statement to check whether the ith restaurants is inside this block or not. Then I used millis function in the main to compare these two functions' running time. 

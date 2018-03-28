@@ -1,0 +1,21 @@
+Name: QIUFENG DU; Hai Huang
+ID no.: 1439484; 1500228
+Section: A2
+
+Accessories:
+* Arduino Mega Board * 2 {one server(A),one client(B)}
+* USB cable
+* cables
+* Resistor
+
+Wiring instructions:
+Arduino(0) Power GND<--> Arduino(1) Power GND
+Arduino(0) +5V Power <--> Resistor <--> Arduino(0) Pin13
+Arduino(1) GND <--> Resistor <--> Arduino(1) 13
+Arduino(0) TX3 14 <--> Arduino(1) RX3 15
+Arduino(1) TX3 14 <--> Arduino(0) RX3 15
+Arduino Mega Board(0) <--> USB cable <--> PC0
+Arduino Mega Board(1) <--> USB cable <--> PC1
+
+Code running instruction:
+The main purpose of this code is to implementing arduino-to-arduino communication over an encrypted serial link in which the Diffie-Hellman shared secret protocol is used to establish a shared key. In the first part we build a fucntion called pow_mod to calculate the public key and the personal secret key. We did generate a random private key as well in the first part of the Assignment. In the second part of the Assignment we did 3 improvements in order to make the encrypted communication both more secure and easier to use. First is to use 31-bit public keys instead of using 16-bit keys. In order to avoid the overflow, we made a 32 bits mul_mod function. The mul_mod function has same idea as pow_mod function we made before. It calculation the modulo each step to avoid overflowing inside the mul_mod function. Combining the mul_mod function into the pow_mod function we made before. In other word, by using the mul_mod function, we are able to make sure that each multiplication results inside the pow_mod function would be 32 bits long. The 2nd improvment is to make the code do the key exchange automatically rather than manually. In this part, one of the Arduinos will be configured using the digital port 13 to act as a server, the other will be configured to act as a client. When the code is running, we used digitalRead to recognize the reading of Pin13. We used if else statement to distinguish the server and client. If the reading is high, the arduinos should be the server, if the reading is low, the arduinos should be the client. In order to automatically change the key and connect the server and client arduinos togather, we used state machine. Inside the statemachine, we used if else statement only, and followed the diagram posted in eclass. The state machine for the server part will return the  received client's public key(ckey), and the client part will return the received server's public key (skey). The state machine was correspondly putted inside the main function where the if else statement we made earlier. By using the ckey and skey from client and server we were able to calculate the private key using pow_mod function. Final improving is to encrypt each character with a different key. By using the In order to achieve that, we used the 32 bits function next_key which is given in the eclass and use the statement current_key = next_key(uint32_t current_key) to update the secret key each time (current_key initially is the secret key computed in if else statement inside the main function).

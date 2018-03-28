@@ -1,0 +1,20 @@
+Name: QIUFENG DU
+ID no.: 1439484
+Section: EA2
+
+Accessories:
+* Arduino Mega Board
+* USB cable
+
+Wiring instructions:
+Arduino Mega Board <--> USB cable <--> PC
+
+Code running instruction:
+Part A: 
+At the begining, I used the code we learned during the class to get a input number, and used function strtoul to convert the string into an 32 bits unsigned long integer. Then, I put the converted integer in to an array, and used 2 for loop to locate the position where the fisrt "1" is appared. Use this location to calculte how many bits are needed.
+
+Part B:
+I used the same code as part a to get the input ip address. Then I created a similar code to get the input of octet number. After all these, I put the ip address into an 32 bits array, and used the octet number to decide which part of the array was needed. During this process, I always got wrong final answeres, so I started debugging.During the debugging process, I printed out the part of the array that is needed, and it is correct. Thus, the error was happened during the calcualtion. Or if I used wrong integer type would also give me a wrong answer. I asked TA, and we could not find out where is wrong. I wrote some comments in the code at the point where the error might happens. 
+
+Part C:
+I firstly use Serial.read() to get the input characters. Then I used if statement to control which part the code should run. 
